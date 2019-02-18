@@ -9,7 +9,7 @@ class LastResult
   end
 
   def perform
-   match_time + ' ' + home_team + ' ' + score + ' ' + guest_team
+    match_time + ' ' + home_team + ' ' + score + ' ' + guest_team
   end
 
   def page
@@ -25,7 +25,7 @@ class LastResult
   end
 
   def score
-    unhandled_score.gsub(/\n|\r/, "").strip
+    unhandled_score.gsub(/\n|\r/, '').strip
   end
 
   def guest_team

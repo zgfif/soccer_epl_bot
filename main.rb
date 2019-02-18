@@ -3,8 +3,6 @@ require_relative 'last_result'
 
 TOKEN = ENV['TELEGRAM_TOKEN']
 
-ANSWERS = ['Yes', 'No', 'Maybe']
-
 Telegram::Bot::Client.run(TOKEN) do |bot|
   bot.listen do |message|
     case message.text
@@ -26,7 +24,7 @@ Telegram::Bot::Client.run(TOKEN) do |bot|
     else
       bot.api.send_message(
         chat_id: message.chat.id,
-        text: ANSWERS.sample
+        text: 'Please type /result'
       )
     end
   end
