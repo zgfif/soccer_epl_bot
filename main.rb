@@ -9,22 +9,22 @@ Telegram::Bot::Client.run(TOKEN) do |bot|
     when '/start', '/start start'
       bot.api.send_message(
         chat_id: message.chat.id,
-        text: "Hello, #{message.from.first_name}"
+        text: "Привет, #{message.from.first_name} \xF0\x9F\x98\x89"
       )
     when '/stop'
       bot.api.send_message(
         chat_id: message.chat.id,
-        text: "Bye, #{message.from.first_name}"
+        text: "До встречи, #{message.from.first_name} \xF0\x9F\x98\x81"
       )
     when '/result'
       bot.api.send_message(
         chat_id: message.chat.id,
-        text: "first result of EPL #{LastResult.new.perform}"
+        text: LastResult.new.perform
       )
     else
       bot.api.send_message(
         chat_id: message.chat.id,
-        text: 'Please type /result'
+        text: 'Пожалуйста, введите /result'
       )
     end
   end

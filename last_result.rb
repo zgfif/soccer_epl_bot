@@ -10,30 +10,34 @@ class LastResult
   end
 
   def perform
-    match_time + ' ' + home_team + ' ' + score + ' ' + guest_team
+    array_of_score.join "\n"
   end
 
   def page
     @page ||= Nokogiri::HTML(open(site))
   end
 
-  def match_time
-    page.at_css('td.time').text
+  def game_feed
+    page.at_css('article.game-feed')
   end
 
-  def home_team
-    page.at_css('td.left-team').text
-  end
+  def array_of_score
+    games_result = []
 
-  def score
-    unhandled_score.gsub(/\n|\r/, '').strip
-  end
+    game_feed.children.each do |node|
+      next if node.is_a? Nokogiri::XML::Text
 
-  def guest_team
-    page.at_css('td.right-team').text
-  end
+      node.children.each do |inner|
+        next if inner.is_a? Nokogiri::XML::Text
 
-  def unhandled_score
-    page.at_css('td.score.ended a').text
+        mmm = ''
+        inner.children.each do |el|
+          next if el.is_a? Nokogiri::XML::Text
+          mmm << el.text.strip + ' '
+        end
+        games_result << mmm
+      end
+    end
+    games_result
   end
 end
