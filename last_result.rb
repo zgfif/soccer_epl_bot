@@ -1,3 +1,5 @@
+# this class is used to return extracted data from required URI
+
 require 'nokogiri'
 
 require 'open-uri'
@@ -10,18 +12,24 @@ class LastResult
   end
 
   def perform
+    # this method returns the string of data with new line symbols - \n
     array_of_score.join "\n"
   end
 
+  # private
+
   def page
-    @page ||= Nokogiri::HTML(open(site))
+    # this method returns the entire page by uri
+    @page ||= Nokogiri::HTML.parse open(site)
   end
 
   def game_feed
+    # this method returns the node that contains required data
     page.at_css('article.game-feed')
   end
 
   def array_of_score
+    # this method returns the array of parsed data from basic node
     games_result = []
 
     game_feed.children.each do |node|
