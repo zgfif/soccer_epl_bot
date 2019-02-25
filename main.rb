@@ -3,7 +3,9 @@ require_relative 'last_result'
 
 TOKEN = ENV['TELEGRAM_TOKEN']
 
-Telegram::Bot::Client.run(TOKEN) do |bot|
+Telegram::Bot::Client.run(TOKEN, logger: Logger.new($stderr)) do |bot|
+  bot.logger.info('Bot has been started')
+
   bot.listen do |message|
     case message.text
     when '/start'
