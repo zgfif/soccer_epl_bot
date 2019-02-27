@@ -4,7 +4,7 @@ require 'nokogiri'
 
 require 'open-uri'
 
-class LastResult
+class EnglishResult
   attr_reader :site
 
   def initialize
