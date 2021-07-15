@@ -4,7 +4,7 @@ require_relative 'english_result'
 
 require_relative 'champions_result'
 
-TOKEN = ENV['TELEGRAM_TOKEN']
+TOKEN = ENV['TG_SOCCER_TOKEN']
 
 def help_text
   "Commands: \n
