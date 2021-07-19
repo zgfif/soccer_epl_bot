@@ -98,3 +98,6 @@ RSpec.configure do |config|
   Kernel.srand config.seed
 =end
 end
+
+require_relative '../lib/epl'
+require_relative '../lib/message'
