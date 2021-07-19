@@ -28,8 +28,13 @@ GEM
     faraday-net_http (1.0.1)
     faraday-net_http_persistent (1.2.0)
     faraday-patron (1.0.0)
+    httparty (0.13.7)
+      json (~> 1.8)
+      multi_xml (>= 0.5.2)
     ice_nine (0.11.2)
+    json (1.8.6)
     mini_portile2 (2.5.3)
+    multi_xml (0.6.0)
     multipart-post (2.1.1)
     nokogiri (1.11.7)
       mini_portile2 (~> 2.5.0)
@@ -63,6 +68,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  httparty (~> 0.13.7)
   nokogiri
   rspec (~> 3.10)
   telegram-bot-ruby
