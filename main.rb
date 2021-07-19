@@ -1,8 +1,11 @@
 require 'telegram/bot'
 
-require_relative 'english_result'
+require_relative './lib/message'
+require_relative './lib/epl'
 
-require_relative 'champions_result'
+# require_relative 'english_result'
+
+# require_relative 'champions_result'
 
 TOKEN = ENV['TG_SOCCER_TOKEN']
 
@@ -30,7 +33,7 @@ Telegram::Bot::Client.run(TOKEN, logger: Logger.new($stderr)) do |bot|
 
       bot.api.send_message(chat_id: message.chat.id, text: 'До встречи', reply_markup: hide_kb)
     when '/england'
-      bot.api.send_message(chat_id: message.chat.id, text: EnglishResult.new.perform)
+      bot.api.send_message(chat_id: message.chat.id, text: Message.build(Epl.new.recent))
     when '/help'
       bot.api.send_message(chat_id: message.chat.id, text: help_text)
     when '/champions'
