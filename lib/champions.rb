@@ -1,5 +1,5 @@
 require 'nokogiri'
-require 'httparty'
+require 'open-uri'
 
 class Champions
   ADDR = 'https://champions.football.ua/results/'
@@ -45,7 +45,7 @@ class Champions
   end
 
   def page
-    HTTParty.get(ADDR)
+    URI.open(ADDR)
   end
 
   def parsed_page

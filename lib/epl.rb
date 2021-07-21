@@ -1,4 +1,4 @@
-require 'httparty'
+require 'open-uri'
 require 'nokogiri'
 
 class Epl
@@ -56,7 +56,7 @@ class Epl
   end
 
   def page
-    HTTParty.get(ADDR)
+    URI.open(ADDR)
   end
 
   def handle_str(str)
