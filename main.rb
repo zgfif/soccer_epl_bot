@@ -2,6 +2,7 @@ require 'telegram/bot'
 
 require_relative './lib/message'
 require_relative './lib/epl'
+require_relative './lib/champions'
 
 # require_relative 'english_result'
 
@@ -37,7 +38,7 @@ Telegram::Bot::Client.run(TOKEN, logger: Logger.new($stderr)) do |bot|
     when '/help'
       bot.api.send_message(chat_id: message.chat.id, text: help_text)
     when '/champions'
-      bot.api.send_message(chat_id: message.chat.id, text: ChampionsResult.new.perform)
+      bot.api.send_message(chat_id: message.chat.id, text: Message.build(Champions.new.upcoming))
     end
   end
 end
