@@ -99,6 +99,7 @@ RSpec.configure do |config|
 =end
 end
 
-require_relative '../lib/epl'
-require_relative '../lib/champions'
+require_relative '../lib/english_premier_league'
+require_relative '../lib/champions_league'
 require_relative '../lib/message'
+require_relative '../lib/clearable'
