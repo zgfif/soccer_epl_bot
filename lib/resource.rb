@@ -29,8 +29,4 @@ class Resource
   def content_rows_selector
     nil
   end
-  # 
-  # def text_data(node, selector)
-  #   node.at_css(selector).text
-  # end
 end
