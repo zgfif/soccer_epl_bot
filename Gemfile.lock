@@ -7,7 +7,6 @@ GEM
       thread_safe (~> 0.3, >= 0.3.1)
     coercible (1.0.0)
       descendants_tracker (~> 0.0.1)
-    date (3.1.0)
     descendants_tracker (0.0.4)
       thread_safe (~> 0.3, >= 0.3.1)
     diff-lcs (1.4.4)
@@ -30,16 +29,13 @@ GEM
     faraday-net_http_persistent (1.2.0)
     faraday-patron (1.0.0)
     ice_nine (0.11.2)
-    mini_portile2 (2.5.3)
+    mini_portile2 (2.8.0)
     multipart-post (2.1.1)
-    nokogiri (1.11.7)
-      mini_portile2 (~> 2.5.0)
+    nokogiri (1.13.9)
+      mini_portile2 (~> 2.8.0)
       racc (~> 1.4)
     open-uri (0.1.0)
-      stringio
-      time
-      uri
-    racc (1.5.2)
+    racc (1.6.0)
     rspec (3.10.0)
       rspec-core (~> 3.10.0)
       rspec-expectations (~> 3.10.0)
@@ -54,15 +50,11 @@ GEM
       rspec-support (~> 3.10.0)
     rspec-support (3.10.2)
     ruby2_keywords (0.0.4)
-    stringio (3.0.0)
     telegram-bot-ruby (0.16.0)
       dry-inflector
       faraday
       virtus (~> 2.0)
     thread_safe (0.3.6)
-    time (0.1.0)
-      date
-    uri (0.10.1)
     virtus (2.0.0)
       axiom-types (~> 0.1)
       coercible (~> 1.0)
